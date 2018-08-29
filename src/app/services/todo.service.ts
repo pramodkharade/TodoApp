@@ -6,22 +6,36 @@ export class TodoService {
   private todos: Todo[];
   private nextId: number;
   constructor() {
-    this.todos = [
-      new Todo(0, 'Make Dinner tonight!'),
-      new Todo(1, 'Make Launch tommorow!')
-    ];
+    // this.todos = [
+    //   new Todo(0, 'Make Dinner tonight!'),
+    //   new Todo(1, 'Make Launch tommorow!')
+    // ];
+    let todos = this.getTodos();
+    if (todos.length == 0) {
+      this.nextId = 0;
+    } else {
+      let maxId = todos[todos.length -1].id;
+      this.nextId = maxId + 1;
+    }
     this.nextId = 3;
   }
   public addTodo(text: string): void {
-    const todo = new Todo(this.nextId, text);
-    this.todos.push(todo);
+    let todo = new Todo(this.nextId, text);
+    let todos = this.getTodos();
+    todos.push(todo);
+    this.setLocalStorageTodos(todos);
     this.nextId++;
   }
   public getTodos(): Todo[] {
-    return this.todos;
+    let localStorageItem = JSON.parse(localStorage.getItem('todos'));
+    return localStorageItem == null ? [] : localStorageItem.todos;
+    //return this.todos;
   }
   public removeTodos(id: number): void {
     this.todos = this.todos.filter((todo) => todo.id !== id);
+  }
+  public setLocalStorageTodos(todos:Todo[]) : void{
+    localStorage.setItem('todos', JSON.stringify({ todos: todos}));
   }
 
 }
