@@ -32,7 +32,9 @@ export class TodoService {
     //return this.todos;
   }
   public removeTodos(id: number): void {
-    this.todos = this.todos.filter((todo) => todo.id !== id);
+    let todos = this.getTodos();
+    todos = todos.filter((todo) => todo.id !== id);
+    this.setLocalStorageTodos(todos);
   }
   public setLocalStorageTodos(todos:Todo[]) : void{
     localStorage.setItem('todos', JSON.stringify({ todos: todos}));
