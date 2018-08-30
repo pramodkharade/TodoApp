@@ -8,14 +8,18 @@ import { TodoService} from '../../services/todo.service';
 })
 export class TodoInputComponent implements OnInit {
   private todoText: string;
+  private todotime: string;
   constructor(private todoService: TodoService) {
     this.todoText = '';
+    this.todotime = '';
    }
 
   ngOnInit() {
   }
   addTodo(): void {
-    this.todoService.addTodo(this.todoText);
+    this.todoService.addTodo(this.todoText, this.todotime);
+    this.todoText = '';
+    this.todotime = '';
   }
 
 }

@@ -1,4 +1,4 @@
 <div class="todowrapper">
   <button class="removeTodo" (click)="removeTodo()">Remove Item</button>
-  {{ todo.text }}
+  {{ todo.text }} | {{ todo.todotime | date:'medium'}}
 </div>

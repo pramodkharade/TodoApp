@@ -1,6 +1,12 @@
-<div class="todo-input-wrapper">
-  <input type="text" [(ngModel)]="todoText" value="{{ todoText }}">
-  <button class="btn btn-primary" (click)="addTodo()">
-    Submit
-  </button>
+
+<div class="form-group">
+  <label for="pwd">Task:</label>
+  <input type="text" class="form-control" [(ngModel)]="todoText" value="{{ todoText }}">
+</div>
+<div class="form-group">
+  <label for="email">Date Time:</label>
+        <p-calendar [(ngModel)]="todotime" [showTime]="true"></p-calendar>
+</div>
+<div class="form-group">
+    <button class="btn btn-primary" (click)="addTodo()"> Submit</button>
 </div>

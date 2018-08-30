@@ -19,8 +19,8 @@ export class TodoService {
     }
     this.nextId = 3;
   }
-  public addTodo(text: string): void {
-    let todo = new Todo(this.nextId, text);
+  public addTodo(text: string,todotime:string): void {
+    let todo = new Todo(this.nextId, text,todotime);
     let todos = this.getTodos();
     todos.push(todo);
     this.setLocalStorageTodos(todos);
