@@ -20,6 +20,7 @@ export class TodoService {
     this.nextId = 3;
   }
   public addTodo(text: string,todotime:string): void {
+    console.log('time is:',todotime);
     let todo = new Todo(this.nextId, text,todotime);
     let todos = this.getTodos();
     todos.push(todo);

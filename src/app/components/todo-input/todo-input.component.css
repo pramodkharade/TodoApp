@@ -29,3 +29,14 @@ input:focus{
     border-top: 2px solid rgba(73, 204, 249, 1.0);
     border-bottom: 2px solid rgba(73, 204, 249, 1.0);
 } */
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+:host ::ng-deep button {
+    margin-right: .25em;
+}
+
+:host ::ng-deep .ui-message,
+:host ::ng-deep .ui-inputtext {
+    margin-right: .25em;
+}

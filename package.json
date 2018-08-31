@@ -24,6 +24,7 @@
     "@angular/router": "^5.2.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0",
     "bootstrap": "^3.3.7",
+    "bootstrap-auto-dismiss-alert": "^1.0.2",
     "core-js": "^2.4.1",
     "jquery": "^3.3.1",
     "ng-pick-datetime": "^5.2.6",

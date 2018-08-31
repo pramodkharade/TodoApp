@@ -1,12 +1,14 @@
 
+<div *ngIf="successflag" class="alert alert-success alert-dismissible" data-auto-dismiss role="alert" data-auto-dismiss="2000">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Success!</strong> Todo check-list has been saved.
+  </div>
 <div class="form-group">
-  <label for="pwd">Task:</label>
-  <input type="text" class="form-control" [(ngModel)]="todoText" value="{{ todoText }}">
+  <input type="text" pInputText class="ui-inputtext ui-corner-all ui-widget" placeholder="Task Name" [(ngModel)]="todoText" pInputText name="todoText" value="{{ todoText }}" required>
 </div>
 <div class="form-group">
-  <label for="email">Date Time:</label>
-        <p-calendar [(ngModel)]="todotime" [showTime]="true"></p-calendar>
+        <p-calendar [(ngModel)]="todotime"   placeholder="Todo date and time" required [showTime]="true"></p-calendar>
 </div>
 <div class="form-group">
-    <button class="btn btn-primary" (click)="addTodo()"> Submit</button>
+    <button class="btn btn-primary" (click)="addTodo()" [disabled]="!todoText || !todotime"> Submit</button>
 </div>
