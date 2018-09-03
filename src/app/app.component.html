@@ -8,7 +8,7 @@
     <div class="col-sm-8">
       <app-todo-input></app-todo-input>
       <div style="margin-bottom:5px;"><label> 
-        Search By :</label><input [(ngModel)]="searchQuery" (input)="filterData(searchQuery)" placeholder="Enter search term here" class="ui-inputtext ui-corner-all ui-widget" ></div>
+        Search By Name :</label><input [(ngModel)]="searchQuery" (input)="filterData(searchQuery)" placeholder="Enter name term here" class="ui-inputtext ui-corner-all ui-widget" ></div>
       <div *ngFor="let todo of todoData">
         <app-todo-item [todo]="todo"></app-todo-item>
       </div>
