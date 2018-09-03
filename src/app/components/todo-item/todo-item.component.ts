@@ -1,4 +1,4 @@
-import { Component, OnInit , Input } from '@angular/core';
+import { Component, OnInit , Input, OnChanges, SimpleChange } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 import { Todo } from '../../classes/todo';
@@ -20,11 +20,15 @@ private status:number;
     const currentDateTime: Date = new Date();
     if(currentDateTime < new Date(this.todo.todotime){
       this.status=1;
-    }else{
+    }
+    else
+    {
       this.status=2;
     }
   }
+  
   private removeTodo(): void {
     this.todoService.removeTodos(this.todo.id);
   }
+  
 }

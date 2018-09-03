@@ -1,4 +1,5 @@
+
 <div class="todowrapper">
   <button class="btn btn-danger" (click)="removeTodo()" [disabled]="this.status==2">Remove Item</button>
-  {{ todo.text }} | {{ todo.todotime | date:'medium'}} | <strong>{{(this.status==1)?'Upcoming':'Done'}} </strong>
+  {{ todo.text }} | {{ todo.todotime | date:'medium'}} | <strong>{{(this.status==1)?'Upcoming':'Done'}} </strong> 
 </div>
