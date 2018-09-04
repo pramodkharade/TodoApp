@@ -13,22 +13,18 @@ import { TodoService } from '../../services/todo.service';
 export class TodoItemComponent implements OnInit {
 @Input()
 private todo: Todo;
-private status:number;
+private status: number;
   constructor( private todoService: TodoService) { }
 
   ngOnInit() {
     const currentDateTime: Date = new Date();
-    if(currentDateTime < new Date(this.todo.todotime){
-      this.status=1;
-    }
-    else
-    {
-      this.status=2;
+    if (currentDateTime < new Date(this.todo.todotime) {
+      this.status = 1;
+    } else {
+      this.status = 2;
     }
   }
-  
   private removeTodo(): void {
     this.todoService.removeTodos(this.todo.id);
   }
-  
 }
